@@ -1,3 +1,9 @@
+<script src="/login/status"></script>
+<script>
+  if (isLogin == false || role == 'normal') {
+    location.href='login.html'
+  }
+</script>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -135,6 +141,7 @@
     <option value="{{$value._id}}">{{$value.title}}</option>
     {{/each}}
   </script>
+  <script src="../assets/js/common.js"></script>
   <script src="../assets/js/posts.js"></script>
 </body>
 </html>

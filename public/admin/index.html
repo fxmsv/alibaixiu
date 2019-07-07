@@ -1,6 +1,6 @@
 <script src="/login/status"></script>
 <script>
-  if (isLogin == false) {
+  if (isLogin == false || role == 'normal') {
     location.href='login.html'
   }
 </script>
@@ -50,7 +50,7 @@
 
   <div class="aside">
     <div class="profile">
-      <img class="avatar" src="../uploads/avatar.jpg">
+      <img class="avatar">
       <h3 class="name">Coder</h3>
     </div>
     <ul class="nav">

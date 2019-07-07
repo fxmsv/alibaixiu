@@ -1,3 +1,9 @@
+<script src="/login/status"></script>
+<script>
+  if (isLogin == false || role == 'normal') {
+    location.href='login.html'
+  }
+</script>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -121,6 +127,7 @@
     </tr>
     {{/each}}
   </script>
+  <script src="../assets/js/common.js"></script>
   <script src="../assets/js/slides.js"></script>
 </body>
 </html>

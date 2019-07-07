@@ -27,7 +27,8 @@ $('#settingForm').on('submit', function () {
     dataType:'json',
     success:function(result){//成功的回调函数
       // console.log(result)
-      location.reload()
+      alert('网站设置成功')
+      // location.reload()
     }
   })
   return false;
@@ -38,12 +39,17 @@ $.ajax({
   type:'get',//get或post
   url:'/settings',//请求的地址
   success:function(result){//成功的回调函数
-    console.log(result)
-    $('#preview').prop('src', result.logo)
-    $('#hiddenLogo').val(result.logo)
-    $('input[name="title"]').val(result.title)
-    $('input[name="comment"]').prop('checked', result.comment)
-    $('input[name="review"]').prop('checked', result.review)
-
+    // console.log(result)
+    if (result) {
+      // logo展示
+      $('#preview').prop('src', result.logo)
+      // 将logo地址保存在隐藏域中
+      $('#hiddenLogo').val(result.logo)
+      // 站点名称显示
+      $('input[name="title"]').val(result.title)
+      // 评论选中或不选中显示
+      $('input[name="comment"]').prop('checked', result.comment)
+      $('input[name="review"]').prop('checked', result.review)
+    }
   }
 })

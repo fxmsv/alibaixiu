@@ -22,7 +22,7 @@
       <ul class="nav">
         <li><a href="javascript:;"><i class="fa fa-glass"></i>奇趣事</a></li>
         <li><a href="javascript:;"><i class="fa fa-phone"></i>潮科技</a></li>
-        <li><a href="list.html"><i class="fa fa-fire"></i>会生活</a></li>
+        <li><a href="javascript:;"><i class="fa fa-fire"></i>会生活</a></li>
         <li><a href="javascript:;"><i class="fa fa-gift"></i>美奇迹</a></li>
       </ul>
       <div class="search">
@@ -177,45 +177,8 @@
       </div>
     </div>
     <div class="content">
-      <div class="swipe">
-        <ul class="swipe-wrapper" id="slidesBox">
-
-        </ul>
-        <p class="cursor"><span class="active"></span><span></span><span></span><span></span></p>
-        <a href="javascript:;" class="arrow prev"><i class="fa fa-chevron-left"></i></a>
-        <a href="javascript:;" class="arrow next"><i class="fa fa-chevron-right"></i></a>
-      </div>
-      <div class="panel hots">
-        <h3>热门推荐</h3>
-        <ul>
-          <li>
-            <a href="javascript:;">
-              <img src="uploads/hots_2.jpg" alt="">
-              <span>星球大战:原力觉醒视频演示 电影票68</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <img src="uploads/hots_3.jpg" alt="">
-              <span>你敢骑吗？全球第一辆全功能3D打印摩托车亮相</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <img src="uploads/hots_4.jpg" alt="">
-              <span>又现酒窝夹笔盖新技能 城里人是不让人活了！</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <img src="uploads/hots_5.jpg" alt="">
-              <span>实在太邪恶！照亮妹纸绝对领域与私处</span>
-            </a>
-          </li>
-        </ul>
-      </div>
       <div class="panel new">
-        <h3>最新发布</h3>
+        <h3></h3>
 
       </div>
     </div>
@@ -224,28 +187,11 @@
     </div>
   </div>
   <script src="assets/vendors/jquery/jquery.js"></script>
-  <script src="assets/vendors/swipe/swipe.js"></script>
-  <script>
-    
-  </script>
-  <script src="./assets/vendors/art-template/template-web.js"></script>
-  <!-- 轮播图模板 -->
-  <script type="text/html" id="slidesTpl">
-    {{each data}}
-    <li>
-      <a href="index.html?id={{$value.link}}">
-        <img src="{{$value.image}}">
-        <span>{{$value.title}}</span>
-      </a>
-    </li>
-    {{/each}}
-  </script>
-  <!-- 最新发布模板 -->
-  <script type="text/html" id="lastedTpl">
+  <script src="assets/vendors/art-template/template-web.js"></script>
+  <script type="text/html" id="searchTpl">
     {{each data}}
     <div class="entry">
       <div class="head">
-        <span class="sort">{{$value.category.title}}</span>
         <a href="detail.html?id={{$value._id}}">{{$value.title}}</a>
       </div>
       <div class="main">
@@ -269,8 +215,7 @@
     </div>
     {{/each}}
   </script>
-  <script src="./assets/js/home.js"></script>
-  <script src="./assets/js/recommend.js"></script>
   <script src="./assets/js/public.js"></script>
+  <script src="assets/js/search.js"></script>
 </body>
 </html>

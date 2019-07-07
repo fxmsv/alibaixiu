@@ -1,3 +1,4 @@
+<script src="/login/status"></script>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -45,7 +46,7 @@
       </div>
       <div class="widgets">
         <h4>随机推荐</h4>
-        <ul class="body random">
+        <ul class="body random" id="randomRecommend">
           <li>
             <a href="javascript:;">
               <p class="title">废灯泡的14种玩法 妹子见了都会心动</p>
@@ -95,7 +96,7 @@
       </div>
       <div class="widgets">
         <h4>最新评论</h4>
-        <ul class="body discuz">
+        <ul class="body discuz" id="lastedComments">
           <li>
             <a href="javascript:;">
               <div class="avatar">
@@ -179,22 +180,7 @@
     </div>
     <div class="content">
       <div class="article">
-        <div class="breadcrumb">
-          <dl>
-            <dt>当前位置：</dt>
-            <dd><a href="javascript:;">奇趣事</a></dd>
-            <dd>变废为宝！将手机旧电池变为充电宝的Better RE移动电源</dd>
-          </dl>
-        </div>
-        <h2 class="title">
-          <a href="javascript:;">又现酒窝夹笔盖新技能 城里人是不让人活了！</a>
-        </h2>
-        <div class="meta">
-          <span>DUX主题小秘 发布于 2020-06-29</span>
-          <span>分类: <a href="javascript:;">奇趣事</a></span>
-          <span>阅读: (2421)</span>
-          <span>评论: (143)</span>
-        </div>
+        
       </div>
       <style type="text/css">
         .comment {
@@ -214,10 +200,10 @@
         }
       </style>
       <div class="comment">
-        <form>
+        <!-- <form>
           <textarea></textarea>
           <input type="submit" value="提交评论">
-        </form>
+        </form> -->
       </div>
       <div class="panel hots">
         <h3>热门推荐</h3>
@@ -255,5 +241,29 @@
   </div>
   <script src="assets/vendors/jquery/jquery.js"></script>
   <script src="assets/vendors/nprogress/nprogress.js"></script>
+  <script src="assets/vendors/art-template/template-web.js"></script>
+  <script type="text/html" id="detailTpl">
+    <div class="breadcrumb">
+      <dl>
+        <dt>当前位置：</dt>
+        <dd><a href="list.html?id={{category._id}}">{{category.title}}</a></dd>
+        <dd>{{title}}</dd>
+      </dl>
+    </div>
+    <h2 class="title">
+      <a href="javascript:;">{{title}}</a>
+    </h2>
+    <div class="meta">
+      <span>{{author.nickName}} 发布于 {{createAt.split('T')[0]}}</span>
+      <span>分类: <a href="list.html?id={{category._id}}">{{category.title}}</a></span>
+      <span>阅读: ({{meta.views}})</span>
+      <span>评论: ({{meta.comments}})</span>
+      <a href="javascript:;" id="likes">点赞: ({{meta.likes}})</a>
+    </div>
+    <div>{{content}}</div>
+  </script>
+  <script src="assets/js/recommend.js"></script>
+  <script src="./assets/js/public.js"></script>
+  <script src="assets/js/detail.js"></script>
 </body>
 </html>

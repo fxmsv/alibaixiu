@@ -16,3 +16,16 @@ $('#logout').on('click', function() {
     })
   }
 })
+
+// 登录用户的Id
+// console.log(userId);
+$.ajax({
+  type:'get',//get或post
+  url:'/users/' + userId,//请求的地址
+  success:function(result){//成功的回调函数
+    // console.log(result)
+    $('.profile .avatar').attr('src', result.avatar)
+    $('.profile .name').text(result.nickName)
+    // $('.profile').show()
+  }
+})
